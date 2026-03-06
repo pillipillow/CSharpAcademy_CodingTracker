@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            DatabaseManager databaseManager = new DatabaseManager();
+            databaseManager.CreateTable();
         }
     }
 }
