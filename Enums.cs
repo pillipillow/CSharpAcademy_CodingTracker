@@ -5,7 +5,7 @@
         internal enum MenuOptions
         {
             ViewSessions,
-            AddSessions,
+            InsertSessions,
             UpdateSessions,
             DeleteSessions,
             CloseApp

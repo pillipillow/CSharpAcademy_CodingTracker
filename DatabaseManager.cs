@@ -1,4 +1,5 @@
-﻿using Dapper;
+﻿using CodingTracker.Models;
+using Dapper;
 using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Configuration;
 
@@ -22,11 +23,34 @@ namespace CodingTracker
             {
                 var sql = @"CREATE TABLE IF NOT EXISTS coding_tracker(
                             Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                            StartDate TEXT,
-                            EndDate TEXT,
+                            StartTime TEXT,
+                            EndTime TEXT,
                             Duration TEXT)";
 
                 connection.Execute(sql); //Dapper execute
+            }
+        }
+
+        internal int Post(CodingSession session)
+        {
+            using (var connection = new SqliteConnection(GetConnectionString()))
+            {
+                var sql = "INSERT INTO coding_tracker (StartTime, EndTime, Duration) VALUES (@StartTime, @EndTime, @Duration)";
+
+                var rowsAffected = connection.Execute(sql,session); //Dapper Execute
+                return rowsAffected;
+            }
+        }
+
+        internal List<CodingSession> Get()
+        { 
+            using (var connection = new SqliteConnection(GetConnectionString()))
+            {
+                var sql = "SELECT * FROM coding_tracker";
+
+                var sessions = connection.Query<CodingSession>(sql);
+
+                return sessions.ToList();
             }
         }
     }
