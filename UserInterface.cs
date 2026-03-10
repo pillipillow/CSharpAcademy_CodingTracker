@@ -212,9 +212,18 @@ namespace CodingTracker
             }
             else
             {
-                databaseManager.Delete(inputID);
-                AnsiConsole.MarkupLine($"\n[green]Session with ID {inputID} has been deleted![/]");
-                Console.ReadLine();
+                if (AnsiConsole.Confirm("Are you sure you want to delete this session?"))
+                {
+                    databaseManager.Delete(inputID);
+                    AnsiConsole.MarkupLine($"\n[green]Session with ID {inputID} has been deleted![/]");
+                    Console.ReadLine();
+                }
+                else
+                {
+                    AnsiConsole.MarkupLine("[red]Session deletion cancelled[/]");
+                    Console.ReadLine();
+                    return;
+                }     
             }
         }
 
