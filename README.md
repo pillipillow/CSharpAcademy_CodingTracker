@@ -25,8 +25,8 @@ Coding Tracker is the third green belt project from the C# Academy. It is simila
 - Calculating the duration between two date times. I had to use 24 hour time to calculate the duration as it doesn't require to convert for calculations. The calculations is just simply subtract the end date with the start date with TimeSpan as a data type to represent total hours and minutes of the duration.
 
 ## References
-https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Json
-https://stackoverflow.com/questions/39157781/the-configuration-file-appsettings-json-was-not-found-and-is-not-optional
-https://www.learndapper.com/non-query#dapper-execute
-https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-10.0
-https://spectreconsole.net/console
+- https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Json
+- https://stackoverflow.com/questions/39157781/the-configuration-file-appsettings-json-was-not-found-and-is-not-optional
+- https://www.learndapper.com/non-query#dapper-execute
+- https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=net-10.0
+- https://spectreconsole.net/console
