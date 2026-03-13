@@ -150,11 +150,11 @@ namespace CodingTracker
                     switch (choice)
                     {
                         case "Update Start Time":
-                            AnsiConsole.MarkupLine("Please insert the [bold green]start[/] date and time");
+                            AnsiConsole.MarkupLine("Please insert the [bold green]start[/] date and time.");
                             sessionChoice.StartTime = helpers.CheckDateTime();
                             break;
                         case "Update End Time":
-                            AnsiConsole.MarkupLine("\nPlease insert the [bold green]end[/] date and time (or type 0 to go back to the Main Menu).");
+                            AnsiConsole.MarkupLine("\nPlease insert the [bold green]end[/] date and time.");
                             sessionChoice.EndTime = helpers.CheckDateTime();
                             break;
                         case "Save and Update Database":
